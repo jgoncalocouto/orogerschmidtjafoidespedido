@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orogerschmidtjafoidespedido.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .timer {
+            font-size: 48px;
+            margin-top: 50px;
+        }
+        .photos {
+            margin-top: 30px;
+        }
+        img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>O Roger Schmidt já foi despedido?</h1>
+    <div class="timer" id="timer">
+        <!-- O temporizador será exibido aqui -->
+    </div>
+    <div class="photos">
+        <!-- Substitua pelas suas fotos -->
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpeg" alt="Foto 2">
+        <img src="foto3.jpg" alt="Foto 3">
+    </div>
+
+    <script>
+        function startTimer() {
+            // Definir a data e hora de início (18 de Maio de 2022 às 22:30)
+            const startTime = new Date("May 18, 2022 22:30:00").getTime();
+
+            // Atualizar o temporizador a cada segundo
+            setInterval(function() {
+                const now = new Date().getTime();
+                const elapsed = now - startTime;
+
+                const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+                document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+
+        // Iniciar o temporizador
+        startTimer();
+    </script>
+</body>
+</html>
