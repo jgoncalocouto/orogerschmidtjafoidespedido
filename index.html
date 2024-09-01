@@ -30,13 +30,13 @@
     </style>
 </head>
 <body>
-    <h1>O Roger Schmidt já foi despedido?</h1>
+    <h1>O Roger Schmidt já foi despedido!</h1>
     <div class="subtitle">
         <p>Top quality, top players, top performance</p>
-        <p>E já lá vão:</p>
+        <p>E 22M€ de indemnização. Os benfiquistas sofreram durante::</p>
     </div>
     <div class="timer" id="timer">
-        <!-- O temporizador será exibido aqui -->
+        <!-- O número de dias, horas, minutos e segundos será exibido aqui -->
     </div>
     <div class="photos">
         <!-- Substitua pelas suas fotos -->
@@ -46,26 +46,20 @@
     </div>
 
     <script>
-        function startTimer() {
-            // Definir a data e hora de início (18 de Maio de 2022 às 22:30)
-            const startTime = new Date("May 18, 2022 22:30:00").getTime();
+        // Definir a data e hora de início (18 de Maio de 2022 às 22:30)
+        const startTime = new Date("May 18, 2022 22:30:00").getTime();
+        // Definir a data e hora de término (31 de Agosto às 17:00)
+        const endTime = new Date("August 31, 2023 17:00:00").getTime();
+        // Calcular o tempo decorrido entre as duas datas
+        const elapsed = endTime - startTime;
 
-            // Atualizar o temporizador a cada segundo
-            setInterval(function() {
-                const now = new Date().getTime();
-                const elapsed = now - startTime;
+        const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
 
-                const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-
-                document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }, 1000);
-        }
-
-        // Iniciar o temporizador
-        startTimer();
+        // Exibir o resultado estático
+        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     </script>
 </body>
 </html>
